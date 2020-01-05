@@ -14,7 +14,7 @@ public class Zapper : MonoBehaviour
             RaycastHit hit;
             Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 Transform objectHit = hit.transform;
 
