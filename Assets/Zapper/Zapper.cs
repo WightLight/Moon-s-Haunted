@@ -5,24 +5,18 @@ using UnityEngine;
 public class Zapper : MonoBehaviour
 {
 
-    public GameObject origin;
+    public Camera camera;
 
     void Update()
     {
         if (IsFirstTouchDetected())
         {
-            print("Touch Detected");
-
             RaycastHit hit;
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-
-            print(ray);
+            Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
             if(Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                print("Found an object to hit");
                 Transform objectHit = hit.transform;
-                print(objectHit);
 
                 if (objectHit.GetComponent<Ghost>() != null)
                 {
