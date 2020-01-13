@@ -60,8 +60,8 @@ public class Moon : MonoBehaviour
     void CreateAnchor()
     {
         // Create the position of the anchor by raycasting a point towards
-        // the top of the screen.
-        Vector2 pos = new Vector2(Screen.width * .5f, Screen.height * .90f);
+        // the middle of the screen.
+        Vector2 pos = new Vector2(Screen.width * .5f, Screen.height * .5f);
         Ray ray = firstPersonCamera.ScreenPointToRay(pos);
         Vector3 anchorPosition = ray.GetPoint(5f);
 
@@ -70,8 +70,7 @@ public class Moon : MonoBehaviour
         {
             DestroyObject(anchor);
         }
-        anchor = detectedPlane.CreateAnchor(
-            new Pose(anchorPosition, Quaternion.identity));
+        anchor = detectedPlane.CreateAnchor(new Pose(anchorPosition, Quaternion.identity));
 
         // Attach the moon to the anchor.
         transform.position = anchorPosition;

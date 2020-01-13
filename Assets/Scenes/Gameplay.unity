@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 298265542}
   - component: {fileID: 298265541}
   - component: {fileID: 298265543}
+  - component: {fileID: 298265540}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -211,6 +212,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &298265540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298265539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d794558f4bc45ef899cad4cc224cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handleScaleInput: 1
+  adjustScale: 0
 --- !u!114 &298265541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,17 +1138,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
         type: 3}
