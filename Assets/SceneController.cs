@@ -6,6 +6,7 @@ using GoogleARCore;
 public class SceneController : MonoBehaviour
 {
     public Camera firstPersonCamera;
+    public Moon moon;
 
     // Start is called before the first frame update
     void Start()
@@ -62,5 +63,6 @@ public class SceneController : MonoBehaviour
     void SetSelectedPlane(DetectedPlane selectedPlane)
     {
         Debug.Log("Selected plane centered at " + selectedPlane.CenterPose.position);
+        moon.SetSelectedPlane(selectedPlane);
     }
 }

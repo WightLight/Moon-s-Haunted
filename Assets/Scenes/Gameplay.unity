@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstPersonCamera: {fileID: 2071041600}
+  moon: {fileID: 1231884311}
 --- !u!4 &298265542
 Transform:
   m_ObjectHideFlags: 0
@@ -757,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d2cadf55c2241c7abd93750af28a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstPersonCamera: {fileID: 2071041600}
   config:
     rotationSpeed: 0.1
 --- !u!135 &1231884314
@@ -1141,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0973cdc074c04d64b95b2fe2056bd2f5, type: 3}
