@@ -5,6 +5,8 @@ using GoogleARCore;
 
 public class SceneController : MonoBehaviour
 {
+    public Camera firstPersonCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class SceneController : MonoBehaviour
             return;
         }
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        ProcessTouches();
     }
 
     void QuitOnConnectionErrors()
@@ -33,5 +37,30 @@ public class SceneController : MonoBehaviour
         {
             StartCoroutine(CodelabUtils.ToastAndExit("ARCore encountered a problem connecting. Please restart! D:", 3));
         }
+    }
+
+    void ProcessTouches()
+    {
+        Touch touch;
+        if (Input.touchCount != 1 ||
+            (touch = Input.GetTouch(0)).phase != TouchPhase.Began)
+        {
+            return;
+        }
+
+        TrackableHit hit;
+        TrackableHitFlags raycastFilter =
+            TrackableHitFlags.PlaneWithinBounds |
+            TrackableHitFlags.PlaneWithinPolygon;
+
+        if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
+        {
+            SetSelectedPlane(hit.Trackable as DetectedPlane);
+        }
+    }
+
+    void SetSelectedPlane(DetectedPlane selectedPlane)
+    {
+        Debug.Log("Selected plane centered at " + selectedPlane.CenterPose.position);
     }
 }
