@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: f5181153ad200bd4ebbab54520e50b2c
-  - enabled: 0
-    path: Assets/Scenes/SnakePlane.unity
-    guid: 0e3a4b98fe3428c4cbcb23ba28cbf90f
   m_configObjects: {}
