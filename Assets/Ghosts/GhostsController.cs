@@ -7,7 +7,7 @@ public class GhostsController : MonoBehaviour
     public Moon moon;
     private Spawner<Ghost> ghostSpawner;
 
-    void Start()
+    void Awake()
     {
         ghostSpawner = new Spawner<Ghost>(new List<Ghost>(moon.GetComponentsInChildren<Ghost>()));
     }
