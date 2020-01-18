@@ -1058,43 +1058,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1633998294 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7567388274783393785, guid: 7c5646b930a189b439c5146e1e37f6e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 7567388274424785442}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1633998295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633998294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5c63e0b5168704c8b9edd705c46cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1633998300
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633998294}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c7257ec6845c0df4e90e869ef285ba62, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1707862621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,6 +1140,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0973cdc074c04d64b95b2fe2056bd2f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0973cdc074c04d64b95b2fe2056bd2f5, type: 3}
 --- !u!4 &1707862622 stripped
@@ -1185,24 +1153,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1707862621}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1745213252 stripped
+--- !u!1 &1788670824
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7567388274783393785, guid: 7c5646b930a189b439c5146e1e37f6e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2090052140}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1745213253
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788670826}
+  - component: {fileID: 1788670825}
+  m_Layer: 0
+  m_Name: GhostsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1788670825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745213252}
+  m_GameObject: {fileID: 1788670824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5c63e0b5168704c8b9edd705c46cbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c27d8ff7ae5e4fd488686137a3bde08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moon: {fileID: 1231884311}
+--- !u!4 &1788670826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788670824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0399103, y: -1.1130271, z: -3.2753205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910133811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,17 +1329,17 @@ PrefabInstance:
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.52
+      value: 0.744
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.139
+      value: 1.308
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.762
+      value: -0.411
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
@@ -1397,6 +1391,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.60000026
       objectReference: {fileID: 0}
+    - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5646b930a189b439c5146e1e37f6e4, type: 3}
 --- !u!1001 &7567388274424785442
@@ -1419,17 +1418,17 @@ PrefabInstance:
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.544
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.523
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.451
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
@@ -1480,6 +1479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.60000026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5646b930a189b439c5146e1e37f6e4, type: 3}
