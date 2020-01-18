@@ -5,20 +5,15 @@ using UnityEngine;
 public class GhostsController : MonoBehaviour
 {
     public Moon moon;
-    private List<Ghost> ghosts;
+    private Spawner<Ghost> ghostSpawner;
 
     void Start()
     {
-        ghosts = new List<Ghost>(moon.GetComponentsInChildren<Ghost>());
+        ghostSpawner = new Spawner<Ghost>(new List<Ghost>(moon.GetComponentsInChildren<Ghost>()));
     }
 
     void Update()
     {
-        if(NumberOfActiveGhosts() < 1) ghosts[1].Spawn();
-    }
-
-    public int NumberOfActiveGhosts()
-    {
-        return ghosts.FindAll(ghost => ghost.gameObject.activeSelf).Count;
+        ghostSpawner.Update(Time.deltaTime);
     }
 }

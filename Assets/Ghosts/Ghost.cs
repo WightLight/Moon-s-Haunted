@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Ghost : MonoBehaviour, Spawnable
 {
     private const float SPAWN_SPEED = 0.05f;
   
@@ -23,6 +23,11 @@ public class Ghost : MonoBehaviour
     {
         gameObject.SetActive(true);
         Rise();
+    }
+
+    public bool IsSpawned()
+    {
+        return gameObject.activeSelf;
     }
 
     private void Rise()
