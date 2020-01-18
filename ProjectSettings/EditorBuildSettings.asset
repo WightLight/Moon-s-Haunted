@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 06eba590c36b0104cbf18565791b2c38
   - enabled: 1
-    path: Assets/ARPlaneDetectionStuff/Scenes/AR Gameplay.unity
+    path: Assets/Scenes/AR Gameplay.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Gameplay.unity
