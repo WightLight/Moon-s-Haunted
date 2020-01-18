@@ -45,8 +45,6 @@ public class Ghost : MonoBehaviour, Spawnable
     {
         float t = 0;
         Vector3 newPosition = originalPosition + transform.localScale.x * (transform.localRotation * Vector3.up);
-        print(originalPosition);
-        print(newPosition);
 
         while(t < 1)
         {
