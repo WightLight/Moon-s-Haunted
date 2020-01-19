@@ -10,6 +10,8 @@ public class ARTapToPlaceObject : MonoBehaviour
     public GameObject gameObjectToInstantiate;
 
     private GameObject spawnedObject;
+    public Zapper zapper;
+    private ARPlaneManager arPlaneManager;
     private ARRaycastManager arRaycastManager;
     private Vector2 touchPosition;
 
@@ -18,6 +20,9 @@ public class ARTapToPlaceObject : MonoBehaviour
     private void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
+        arPlaneManager = GetComponent<ARPlaneManager>();
+
+        StartCoroutine(PlaceMoon());
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -32,23 +37,33 @@ public class ARTapToPlaceObject : MonoBehaviour
         return false;
     }
 
-    void Update()
+    private IEnumerator PlaceMoon()
     {
-        if (!TryGetTouchPosition(out Vector2 touchPosition))
-            return;
-
-        if(arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
-        {
+        while(!TryGetTouchPosition(out Vector2 touchPosition) || !arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
+            yield return null;
+        
+        Debugging.Use(() => {
+            Debugging.Log("Hit detected!");
             var hitPose = hits[0].pose;
+            if (spawnedObject == null)
+            {
+                StartGame(hitPose);
+            }
+        });
+    }
 
-            if(spawnedObject == null)
-            {
-                spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
-            }
-            else
-            {
-                spawnedObject.transform.position = hitPose.position;
-            }
-        }
+    void StartGame(Pose hitPose)
+    {
+        spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
+        Debugging.Log("Object spawned");
+
+        zapper.gameObject.SetActive(true);
+        Debugging.Log("Started zapper active!");
+
+        arPlaneManager.enabled = false;
+        Debugging.Log("Started arPlaneManager inactive!");
+
+        spawnedObject.SetActive(true);
+        Debugging.Log("Started spawnedObject active!");
     }
 }

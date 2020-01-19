@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Zapper : MonoBehaviour
 {
-
     public Camera camera;
+    public AudioSource audio;
 
     void Update()
     {
         if (IsFirstTouchDetected())
         {
+            audio.Play();
             RaycastHit hit;
             Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
