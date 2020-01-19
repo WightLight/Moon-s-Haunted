@@ -7,10 +7,7 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARRaycastManager))]
 public class ARTapToPlaceObject : MonoBehaviour
 {
-    public GameObject gameObjectToInstantiate;
-
-    private GameObject spawnedObject;
-    public Zapper zapper;
+    public Game game;
     private ARPlaneManager arPlaneManager;
     private ARRaycastManager arRaycastManager;
     private Vector2 touchPosition;
@@ -45,25 +42,15 @@ public class ARTapToPlaceObject : MonoBehaviour
         Debugging.Use(() => {
             Debugging.Log("Hit detected!");
             var hitPose = hits[0].pose;
-            if (spawnedObject == null)
-            {
-                StartGame(hitPose);
-            }
+
+            game.Begin(hitPose);
+            Disable();
         });
     }
 
-    void StartGame(Pose hitPose)
+    public void Disable()
     {
-        spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
-        Debugging.Log("Object spawned");
-
-        zapper.gameObject.SetActive(true);
-        Debugging.Log("Started zapper active!");
-
         arPlaneManager.enabled = false;
         Debugging.Log("Started arPlaneManager inactive!");
-
-        spawnedObject.SetActive(true);
-        Debugging.Log("Started spawnedObject active!");
     }
 }
