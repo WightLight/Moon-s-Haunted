@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARRaycastManager))]
+[RequireComponent(typeof(ARPlaneManager))]
 public class ARTapToPlaceObject : MonoBehaviour
 {
     public Game game;
@@ -51,6 +52,8 @@ public class ARTapToPlaceObject : MonoBehaviour
     public void Disable()
     {
         arPlaneManager.enabled = false;
+        foreach(var plane in arPlaneManager.trackables)
+            plane.gameObject.SetActive(false);
         Debugging.Log("Started arPlaneManager inactive!");
     }
 }
