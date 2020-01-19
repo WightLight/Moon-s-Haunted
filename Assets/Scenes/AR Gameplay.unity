@@ -1202,7 +1202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moonTemplate: {fileID: 5271863893771747955, guid: c5065b0991e3e9e46a3c74bc9d6607db,
     type: 3}
-  zapper: {fileID: 223974227}
+  zapper: {fileID: 223974226}
+  crosshair: {fileID: 854905462}
 --- !u!4 &1562069060
 Transform:
   m_ObjectHideFlags: 0
