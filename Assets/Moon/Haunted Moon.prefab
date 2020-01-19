@@ -172,6 +172,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7567388274783393785, guid: 7c5646b930a189b439c5146e1e37f6e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,6 +266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ghost Other
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567388274783393785, guid: 7c5646b930a189b439c5146e1e37f6e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567388274783393789, guid: 7c5646b930a189b439c5146e1e37f6e4,
         type: 3}
