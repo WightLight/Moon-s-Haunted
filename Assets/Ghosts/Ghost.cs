@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour, Spawnable
@@ -16,7 +15,10 @@ public class Ghost : MonoBehaviour, Spawnable
 
     public void Zap()
     {
-        Reset();
+        Debugging.Use(() => {
+            Reset();
+            Game.Instance().AddScore(10);
+        });
     }
 
     public void Spawn()
