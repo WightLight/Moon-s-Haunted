@@ -8,12 +8,6 @@ public class Ghost : MonoBehaviour, Spawnable
   
     private Vector3 originalPosition;
 
-    private AudioSource audioSource;
-
-    public void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     public void Start()
     {
         originalPosition = transform.localPosition;
@@ -29,7 +23,6 @@ public class Ghost : MonoBehaviour, Spawnable
     {
         gameObject.SetActive(true);
         Rise();
-        audioSource.Play();
     }
 
     public bool IsSpawned()
