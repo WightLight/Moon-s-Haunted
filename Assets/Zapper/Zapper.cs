@@ -6,12 +6,14 @@ public class Zapper : MonoBehaviour
 {
     public Camera camera;
     public AudioSource audio;
+    public Animator animator;
 
     void Update()
     {
         if (IsFirstTouchDetected())
         {
             audio.Play();
+            animator.Play("Shoot", 0, 0);
             RaycastHit hit;
             Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 

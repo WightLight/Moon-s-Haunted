@@ -6,6 +6,7 @@ public class Ghost : MonoBehaviour, Spawnable
     private const float SPAWN_SPEED = 0.05f;
   
     private Vector3 originalPosition;
+    public AudioSource audioSource;
 
     public void Start()
     {
@@ -25,6 +26,7 @@ public class Ghost : MonoBehaviour, Spawnable
     {
         gameObject.SetActive(true);
         Rise();
+        audioSource.Play();
     }
 
     public bool IsSpawned()
