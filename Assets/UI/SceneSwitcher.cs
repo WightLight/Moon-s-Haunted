@@ -20,6 +20,7 @@ public class SceneSwitcher : MonoBehaviour
     // Switch to a different scene
     public void SwitchToScene(string sceneName)
     {
+        print("Thing!");
         SceneManager.LoadScene(sceneName);
     }
 }
