@@ -15,6 +15,9 @@ public class Game : MonoBehaviour
     public GameObject zapper;
     public GameObject crosshair;
     public TMP_Text timerText;
+    public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
+    public TMP_Text instructionsText;
     public GameObject gameOverMenu;
 
     public bool isPlaying = false;
@@ -28,7 +31,7 @@ public class Game : MonoBehaviour
         if (TimeLeft > 0 && isPlaying)
         {
             TimeLeft -= Time.deltaTime;
-            timerText.text = TimeLeft.ToString() + "sec.";
+            timerText.text = Mathf.Floor(TimeLeft).ToString() + " sec.";
         }
         else if(TimeLeft <= 0 && isPlaying) GameOver();
     }
@@ -44,15 +47,24 @@ public class Game : MonoBehaviour
         zapper.SetActive(true);
         crosshair.SetActive(true);
         gameOverMenu.SetActive(false);
+        timerText.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(true);
+        finalScoreText.gameObject.SetActive(true);
+        instructionsText.gameObject.SetActive(false);
         Debugging.Log("Set stuff to active/inactive!");
     }
 
     public void GameOver()
     {
         isPlaying = false;
+        zapper.SetActive(false);
+        crosshair.SetActive(false);
         Destroy(hauntedMoon);
         gameOverMenu.SetActive(true);
         Debugging.Log("Game Over!");
+        timerText.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
+        finalScoreText.text = "Final Score: " + Score;
     }
 
     public void AddScore(int n) { Score += n; }

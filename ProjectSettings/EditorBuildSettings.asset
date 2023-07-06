@@ -14,4 +14,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Gameplay.unity
     guid: f5181153ad200bd4ebbab54520e50b2c
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f8709adaae6c5704ebaba091e678f73e,
+      type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 64a219bbbdd1e8a488b82c335503a118,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: fb11b4907fbd84b478834ec0f705db5e,
+      type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 08bc5a3f6b0f23747b369c2be20da1a3,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 95e379fe69326aa48b0f05438a006bf6,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b669e693aeb1d454894947408bcde41e,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 261befac1317f3648b06b5b1363ad321,
+      type: 2}
