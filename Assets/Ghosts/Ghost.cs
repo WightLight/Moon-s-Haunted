@@ -26,7 +26,7 @@ public class Ghost : MonoBehaviour, Spawnable
         //});
 
         audioSource.Play();
-        //animator.SetTrigger("Death");
+        animator.SetBool("IsDead", true);
         //Reset();
         Game.Instance().AddScore(10);
     }
@@ -38,7 +38,7 @@ public class Ghost : MonoBehaviour, Spawnable
         light.SetActive(true);
         Rise();
         audioSource.Play();
-        //animator.SetBool("IsDead", true);
+        animator.SetBool("IsDead", false);
     }
 
     public bool IsSpawned()
@@ -64,12 +64,15 @@ public class Ghost : MonoBehaviour, Spawnable
     {
         float t = 0;
         Vector3 newPosition = originalPosition + transform.localScale.x * (transform.localRotation * Vector3.up);
+        float spawnVaryTime = Random.Range(SPAWN_SPEED * -0.2f, SPAWN_SPEED * 0.2f);
+        animator.speed = 0;
 
-        while(t < 1)
+        while (t < 1)
         {
-            t += SPAWN_SPEED;
+            t += SPAWN_SPEED + spawnVaryTime;
             transform.localPosition = Vector3.Lerp(originalPosition, newPosition, t);
             yield return null;
         }
+        animator.speed = 1;
     }
 }
